@@ -2,12 +2,10 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"time"
 )
 
 func main() {
-	runtime.GOMAXPROCS(2)
 	fmt.Println("Hello, 世界")
 	Working()
 }
