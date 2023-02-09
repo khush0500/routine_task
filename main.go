@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
+
+var mu sync.Mutex
 
 func main() {
 	fmt.Println("Hello, 世界")
@@ -19,7 +22,10 @@ func Working() {
 	}
 
 	for i := 0; i < 5; i++ {
+		mu.Lock()
 		fmt.Println(<-c)
+		mu.Unlock()
+
 	}
 }
 
